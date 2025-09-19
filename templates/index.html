@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful AI Prototype</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='genai.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="landing-page" class="screen active">
+        <h1>Mindful AI</h1>
+        <p>Find clarity in your day, one reflection at a time.</p>
+        <button id="start-button">Start Your Reflection</button>
+    </div>
+
+    <div id="mood-log-page" class="screen">
+        <h2>How are you feeling right now?</h2>
+        <textarea id="mood-input" placeholder="Type your feelings here..."></textarea>
+        <div class="emoji-container">
+            <span>Tap to add a mood:</span>
+            <button class="emoji-btn">😊</button>
+            <button class="emoji-btn">😔</button>
+            <button class="emoji-btn">😠</button>
+            <button class="emoji-btn">🤯</button>
+        </div>
+        <button id="submit-button">Reflect</button>
+    </div>
+
+    <div id="processing-page" class="screen">
+        <div class="loader"></div>
+        <p>Analyzing your entry...</p>
+    </div>
+
+    <div id="reflection-page" class="screen">
+        <h2 id="reflection-title"></h2>
+        <p id="reflection-text"></p>
+        <button id="back-button">Go Back</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='genai.js') }}"></script>
+</body>
+</html>
